@@ -1,0 +1,13 @@
+{
+    "name": "luna/php-chart",
+    "description": "PHP Wrapper for ChartJS",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thomas Wiringa",
+            "email": "thomas.wiringa@gmail.com"
+        }
+    ],
+    "require": {}
+}
