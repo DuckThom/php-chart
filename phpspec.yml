@@ -1,0 +1,5 @@
+formatter.name: pretty
+suites:
+    luna_suite:
+        namespace: Luna\Chart
+        psr4_prefix: Luna\Chart
