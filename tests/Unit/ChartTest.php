@@ -3,8 +3,9 @@
 namespace Luna\Chart\Tests;
 
 use Luna\Chart\Chart;
+use \PHPUnit\Framework\TestCase;
 
-class ChartTest extends \PHPUnit_Framework_TestCase
+class ChartTest extends TestCase
 {
 
     const TYPE = 'type';
