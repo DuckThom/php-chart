@@ -10,26 +10,40 @@ use Prophecy\Argument;
 class ChartSpec extends ObjectBehavior
 {
 
-    const PIE_TYPE = 'pie';
+    const TYPE = 'pie';
 
-    const LINE_TYPE = 'line';
+    /**
+     * @test
+     */
+    function it_is_initializable()
+    {
+        $this->shouldHaveType(Chart::class);
+    }
 
+    /**
+     * @test
+     */
     function it_should_have_a_chart_type()
     {
         $this->shouldThrow('Luna\Chart\Exceptions\MissingChartTypeException')->during('__construct', [null]);
     }
 
+    /**
+     * @test
+     */
     function it_should_implement()
     {
         $this->shouldImplement('Luna\Chart\ChartInterface');
     }
 
-    function it_should_return_type_it_was_instantiated_with()
+    /**
+     * @test
+     */
+    function type_should_be_a_string()
     {
-        $this->beConstructedWith(self::PIE_TYPE);
+        $this->beConstructedWith(self::TYPE);
 
-        $this->getType()->shouldBeLike(self::PIE_TYPE);
-        $this->getType()->shouldNotBeLike(self::LINE_TYPE);
+        $this->getType()->shouldBeString();
     }
 
 }
