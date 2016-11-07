@@ -5,7 +5,7 @@ namespace Luna\Chart\Types;
 class Pie
 {
     /**
-     * Make sure this pie is not edible
+     * Make sure this pie is not edible.
      *
      * @return bool
      */
@@ -13,5 +13,4 @@ class Pie
     {
         return false;
     }
-
 }
