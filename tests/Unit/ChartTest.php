@@ -12,6 +12,15 @@ class ChartTest extends TestCase
 
     /**
      * @test
+     * @expectedException \Luna\Chart\Exceptions\MissingChartTypeException
+     */
+    public function exceptionIsThrownIfNoTypeIsGiven()
+    {
+        new Chart;
+    }
+
+    /**
+     * @test
      * @return void
      */
     public function shouldReturnChartType()
