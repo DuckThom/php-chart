@@ -6,7 +6,6 @@ use Luna\Chart\Exceptions\MissingChartTypeException;
 
 class Chart implements ChartInterface
 {
-
     /**
      * @var string
      */
@@ -28,7 +27,7 @@ class Chart implements ChartInterface
     }
 
     /**
-     * Get the chart type
+     * Get the chart type.
      *
      * @return string
      */
@@ -36,5 +35,4 @@ class Chart implements ChartInterface
     {
         return $this->type;
     }
-
 }
