@@ -9,13 +9,15 @@
          processIsolation="false"
          stopOnFailure="false"
          syntaxCheck="true">
+
 	<filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./src</directory>
         </whitelist>
     </filter>
+
     <testsuites>
-        <testsuite name="Application Test Suite">
+        <testsuite name="PHP Chart Test Suite">
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
