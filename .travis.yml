@@ -23,5 +23,5 @@ install:
   - travis_retry composer install --no-interaction --prefer-dist --no-suggest
 
 script:
-  - vendor/bin/phpspec 
+  - vendor/bin/phpspec run 
   - vendor/bin/phpunit
