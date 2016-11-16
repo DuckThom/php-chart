@@ -2,10 +2,10 @@
 
 namespace Luna\Chart\Tests;
 
-use Luna\Chart\Chart;
+use Luna\Chart\ChartBuilder;
 use \PHPUnit\Framework\TestCase;
 
-class ChartTest extends TestCase
+class ChartBuilderTest extends TestCase
 {
 
     const TYPE = 'type';
@@ -16,7 +16,7 @@ class ChartTest extends TestCase
      */
     public function exceptionIsThrownIfNoTypeIsGiven()
     {
-        new Chart;
+        new ChartBuilder;
     }
 
     /**
@@ -25,7 +25,7 @@ class ChartTest extends TestCase
      */
     public function shouldReturnChartType()
     {
-        $chart = new Chart(self::TYPE);
+        $chart = new ChartBuilder(self::TYPE);
         $this->assertEquals(self::TYPE, $chart->getType());
     }
 
