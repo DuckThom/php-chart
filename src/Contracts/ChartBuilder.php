@@ -10,21 +10,21 @@ interface ChartBuilder
     /**
      * ChartBuilder constructor.
      */
-    function __construct();
+    public function __construct();
 
     /**
      * Get global ChartJS settings.
      *
      * @return array
      */
-    function getSettings();
+    public function getSettings();
 
     /**
      * Get the stored chart.
      *
      * @return \Luna\Chart\Chart|null
      */
-    function getChart();
+    public function getChart();
 
     /**
      * Set the chart.
@@ -32,7 +32,7 @@ interface ChartBuilder
      * @param  ChartContract  $chart
      * @return $this
      */
-    function setChart(ChartContract $chart);
+    public function setChart(ChartContract $chart);
 
     /**
      * Render the chart HTML.
@@ -40,5 +40,5 @@ interface ChartBuilder
      * @throws MissingChartTypeException
      * @return string
      */
-    function renderChart();
+    public function renderChart();
 }

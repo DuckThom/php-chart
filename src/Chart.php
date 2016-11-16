@@ -27,7 +27,7 @@ abstract class Chart implements ChartContract
     }
 
     /**
-     * Get chart settings
+     * Get chart settings.
      *
      * @return array
      */
@@ -37,7 +37,7 @@ abstract class Chart implements ChartContract
     }
 
     /**
-     * Set chart settings
+     * Set chart settings.
      *
      * @param  array  $settings
      * @return $this

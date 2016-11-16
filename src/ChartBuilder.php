@@ -42,7 +42,7 @@ class ChartBuilder implements ChartBuilderContract
     }
 
     /**
-     * Get the stored chart
+     * Get the stored chart.
      *
      * @return Chart|null
      */
@@ -76,5 +76,4 @@ class ChartBuilder implements ChartBuilderContract
 
         return $this->getChart()->renderHtml();
     }
-
 }
