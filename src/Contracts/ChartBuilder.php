@@ -2,7 +2,6 @@
 
 namespace Luna\Chart\Contracts;
 
-use Luna\Chart\Chart;
 use Luna\Chart\Contracts\Chart as ChartContract;
 use Luna\Chart\Exceptions\MissingChartTypeException;
 
@@ -23,7 +22,7 @@ interface ChartBuilder
     /**
      * Get the stored chart.
      *
-     * @return Chart|null
+     * @return \Luna\Chart\Chart|null
      */
     function getChart();
 
