@@ -60,6 +60,6 @@ class ChartBuilderSpec extends ObjectBehavior
         $chart->beADoubleOf(ChartContract::class);
         $chart->renderHtml()->willReturn("<p>Hello, World</p>");
 
-        $this->setChart($chart)->renderChart()->shouldReturn("<p>Hello, World</p>");
+        $this->setChart($chart)->renderChart()->shouldBeString();
     }
 }
