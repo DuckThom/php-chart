@@ -2,6 +2,7 @@
 
 namespace spec\Luna\Chart\Types;
 
+use Luna\Chart\Chart;
 use Luna\Chart\Types\Pie;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -23,6 +24,14 @@ class PieSpec extends ObjectBehavior
     function it_should_not_be_edible()
     {
         $this->shouldNotBeEdible();
+    }
+
+    /**
+     * @test
+     */
+    function it_should_be_instance_of_chart()
+    {
+        $this->beAnInstanceOf(Chart::class);
     }
 
 }

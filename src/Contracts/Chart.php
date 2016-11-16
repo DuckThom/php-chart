@@ -9,14 +9,14 @@ interface Chart
      *
      * @return string
      */
-    public function getType();
+    function getType();
 
     /**
      * Get the global ChartJS settings
      *
      * @return array
      */
-    public function getSettings();
+    function getSettings();
 
     /**
      * Set global ChartJS settings
@@ -24,5 +24,12 @@ interface Chart
      * @param  array  $settings
      * @return $this
      */
-    public function setSettings($settings = []);
+    function setSettings($settings = []);
+
+    /**
+     * Render the chart HTML.
+     *
+     * @return string
+     */
+    function renderHtml();
 }

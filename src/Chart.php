@@ -2,9 +2,9 @@
 
 namespace Luna\Chart;
 
-use Luna\Chart\Exceptions\MissingChartTypeException;
+use Luna\Chart\Contracts\Chart as ChartContract;
 
-class Chart implements ChartInterface
+abstract class Chart implements ChartContract
 {
     /**
      * @var string
@@ -12,19 +12,9 @@ class Chart implements ChartInterface
     protected $type;
 
     /**
-     * Chart constructor.
-     *
-     * @param  string  $chartType
-     * @throws MissingChartTypeException
+     * @var array
      */
-    public function __construct($chartType = null)
-    {
-        if ($chartType === null) {
-            throw new MissingChartTypeException;
-        }
-
-        $this->type = $chartType;
-    }
+    protected $settings = [];
 
     /**
      * Get the chart type.
@@ -34,5 +24,38 @@ class Chart implements ChartInterface
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * Get chart settings
+     *
+     * @return array
+     */
+    public function getSettings()
+    {
+        return $this->settings;
+    }
+
+    /**
+     * Set chart settings
+     *
+     * @param  array  $settings
+     * @return $this
+     */
+    public function setSettings($settings = [])
+    {
+        $this->settings = array_merge($this->settings, $settings);
+
+        return $this;
+    }
+
+    /**
+     * Render the chart HTML.
+     *
+     * @return string
+     */
+    public function renderHtml()
+    {
+        return $this->_toChartHtml();
     }
 }
