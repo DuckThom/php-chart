@@ -13,6 +13,12 @@ interface ChartBuilder
     public function __construct();
 
     /**
+     * @param  array  $settings
+     * @return mixed
+     */
+    public function setSettings(array $settings);
+
+    /**
      * Get global ChartJS settings.
      *
      * @return array

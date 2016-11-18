@@ -9,7 +9,6 @@ use Prophecy\Argument;
 
 class PieSpec extends ObjectBehavior
 {
-
     /**
      * @test
      */
@@ -31,7 +30,6 @@ class PieSpec extends ObjectBehavior
      */
     function it_should_be_instance_of_chart()
     {
-        $this->beAnInstanceOf(Chart::class);
+        $this->shouldReturnAnInstanceOf(Chart::class);
     }
-
 }

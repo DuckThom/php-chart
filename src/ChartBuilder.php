@@ -3,7 +3,7 @@
 namespace Luna\Chart;
 
 use Luna\Chart\Contracts\Chart as ChartContract;
-use Luna\Chart\Exceptions\MissingChartTypeException;
+use Luna\Chart\Exceptions\ChartNotSetException;
 use Luna\Chart\Contracts\ChartBuilder as ChartBuilderContract;
 
 class ChartBuilder implements ChartBuilderContract
@@ -22,13 +22,25 @@ class ChartBuilder implements ChartBuilderContract
      * ChartBuilder constructor.
      *
      * @param  Chart  $chart
-     * @throws MissingChartTypeException
      */
     public function __construct($chart = null)
     {
         if ($chart instanceof Chart) {
             $this->chart = $chart;
         }
+    }
+
+    /**
+     * Set global ChartJS settings.
+     *
+     * @param  array  $settings
+     * @return $this
+     */
+    public function setSettings(array $settings)
+    {
+        $this->settings = array_merge($this->settings, $settings);
+
+        return $this;
     }
 
     /**
@@ -65,13 +77,13 @@ class ChartBuilder implements ChartBuilderContract
     /**
      * Render the chart.
      *
-     * @throws MissingChartTypeException
+     * @throws ChartNotSetException
      * @return string
      */
     public function renderChart()
     {
         if ($this->getChart() === null) {
-            throw new MissingChartTypeException;
+            throw new ChartNotSetException;
         }
 
         return $this->getChart()->renderHtml();

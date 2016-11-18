@@ -1,13 +1,12 @@
 <?php
 
-namespace Luna\Chart\Tests\Types;
+namespace Luna\Chart\Tests\Unit\Types;
 
 use Luna\Chart\Types\Pie;
 use \PHPUnit\Framework\TestCase;
 
 class PieTest extends TestCase
 {
-
     /**
      * @test
      * @return void
@@ -18,5 +17,4 @@ class PieTest extends TestCase
 
         $this->assertFalse($pie->isEdible());
     }
-
 }

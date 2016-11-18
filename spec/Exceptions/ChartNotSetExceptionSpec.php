@@ -2,11 +2,11 @@
 
 namespace spec\Luna\Chart\Exceptions;
 
-use Luna\Chart\Exceptions\MissingChartTypeException;
+use Luna\Chart\Exceptions\ChartNotSetException;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class MissingChartTypeExceptionSpec extends ObjectBehavior
+class ChartNotSetExceptionSpec extends ObjectBehavior
 {
 
     /**
@@ -14,7 +14,7 @@ class MissingChartTypeExceptionSpec extends ObjectBehavior
      */
     function it_is_initializable()
     {
-        $this->shouldHaveType(MissingChartTypeException::class);
+        $this->shouldHaveType(ChartNotSetException::class);
     }
 
     /**

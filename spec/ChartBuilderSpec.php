@@ -24,7 +24,7 @@ class ChartBuilderSpec extends ObjectBehavior
      */
     function it_should_have_a_chart_type()
     {
-        $this->shouldThrow('Luna\Chart\Exceptions\MissingChartTypeException')->during('renderChart');
+        $this->shouldThrow('Luna\Chart\Exceptions\ChartNotSetException')->during('renderChart');
     }
 
     /**
@@ -49,6 +49,14 @@ class ChartBuilderSpec extends ObjectBehavior
     function it_should_have_global_settings()
     {
         $this->getSettings()->shouldBeArray();
+    }
+
+    /**
+     * @test
+     */
+    function it_should_set_global_settings()
+    {
+        $this->setSettings([])->shouldReturnAnInstanceOf(ChartBuilder::class);
     }
 
     /**

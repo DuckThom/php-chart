@@ -2,7 +2,9 @@
 
 namespace Luna\Chart\Types;
 
-class Pie
+use Luna\Chart\Chart;
+
+class Pie extends Chart
 {
     /**
      * Make sure this pie is not edible.
