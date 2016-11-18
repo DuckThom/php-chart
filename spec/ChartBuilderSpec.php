@@ -3,7 +3,8 @@
 namespace spec\Luna\Chart;
 
 use Luna\Chart\ChartBuilder;
-use Luna\Chart\Contracts\Chart as ChartContract;
+use Luna\Chart\Interfaces\Chart as ChartInterface;
+use Luna\Chart\Interfaces\ChartBuilder as ChartBuilderInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -32,7 +33,7 @@ class ChartBuilderSpec extends ObjectBehavior
      */
     function it_should_implement()
     {
-        $this->shouldImplement('Luna\Chart\Contracts\ChartBuilder');
+        $this->shouldImplement(ChartBuilderInterface::class);
     }
 
     /**
@@ -65,7 +66,7 @@ class ChartBuilderSpec extends ObjectBehavior
      */
     function it_should_be_able_to_return_html($chart)
     {
-        $chart->beADoubleOf(ChartContract::class);
+        $chart->beADoubleOf(ChartInterface::class);
         $chart->renderHtml()->willReturn("<p>Hello, World</p>");
 
         $this->setChart($chart)->renderChart()->shouldBeString();

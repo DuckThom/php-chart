@@ -2,11 +2,11 @@
 
 namespace Luna\Chart;
 
-use Luna\Chart\Contracts\Chart as ChartContract;
+use Luna\Chart\Interfaces\Chart as ChartInterface;
 use Luna\Chart\Exceptions\ChartNotSetException;
-use Luna\Chart\Contracts\ChartBuilder as ChartBuilderContract;
+use Luna\Chart\Interfaces\ChartBuilder as ChartBuilderInterface;
 
-class ChartBuilder implements ChartBuilderContract
+class ChartBuilder implements ChartBuilderInterface
 {
     /**
      * @var Chart
@@ -64,10 +64,10 @@ class ChartBuilder implements ChartBuilderContract
     }
 
     /**
-     * @param  ChartContract  $chart
+     * @param  ChartInterface  $chart
      * @return $this
      */
-    public function setChart(ChartContract $chart)
+    public function setChart(ChartInterface $chart)
     {
         $this->chart = $chart;
 

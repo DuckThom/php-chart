@@ -1,6 +1,6 @@
 <?php
 
-namespace Luna\Chart\Contracts;
+namespace Luna\Chart\Interfaces;
 
 interface Chart
 {

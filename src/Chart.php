@@ -2,9 +2,9 @@
 
 namespace Luna\Chart;
 
-use Luna\Chart\Contracts\Chart as ChartContract;
+use Luna\Chart\Interfaces\Chart as ChartInterface;
 
-abstract class Chart implements ChartContract
+abstract class Chart implements ChartInterface
 {
     /**
      * @var string

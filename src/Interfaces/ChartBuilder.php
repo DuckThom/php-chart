@@ -1,9 +1,9 @@
 <?php
 
-namespace Luna\Chart\Contracts;
+namespace Luna\Chart\Interfaces;
 
-use Luna\Chart\Contracts\Chart as ChartContract;
-use Luna\Chart\Exceptions\MissingChartTypeException;
+use Luna\Chart\Interfaces\Chart as ChartInterface;
+use Luna\Chart\Exceptions\ChartNotSetException;
 
 interface ChartBuilder
 {
@@ -35,15 +35,15 @@ interface ChartBuilder
     /**
      * Set the chart.
      *
-     * @param  ChartContract  $chart
+     * @param  ChartInterface  $chart
      * @return $this
      */
-    public function setChart(ChartContract $chart);
+    public function setChart(ChartInterface $chart);
 
     /**
      * Render the chart HTML.
      *
-     * @throws MissingChartTypeException
+     * @throws ChartNotSetException
      * @return string
      */
     public function renderChart();
